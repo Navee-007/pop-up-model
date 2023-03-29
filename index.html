@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<button class="trigger">Clickme</button>
+<div class="modal">
+    <div class="modal-content">
+        <span class="close-button">×</span>
+        <h1>hi iam Naveen!</h1>
+    </div>
+</div>
+
+    <!-- script -->
+    <script >
+       let modal = document.querySelector(".modal");
+let trigger = document.querySelector(".trigger");
+let closeButton = document.querySelector(".close-button");
+
+function toggleModal() {
+  modal.classList.toggle("show-modal");
+}
+
+function windowOnClick(event) {
+  if (event.target === modal) {
+    toggleModal();
+  }
+}
+
+trigger.addEventListener("click", toggleModal);
+closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick);
+
+    </script>
+</body>
+</html>
